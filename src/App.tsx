@@ -46,11 +46,11 @@ export default function App() {
 
   return (
     <div 
-      className="relative min-h-screen bg-[#f0f4f8] text-slate-800 font-sans flex flex-col items-center justify-center overflow-hidden touch-none"
+      className="relative min-h-[100dvh] bg-[#f0f4f8] text-slate-800 font-sans flex flex-col items-center overflow-x-hidden"
       onPointerMove={handlePointerMove}
     >
       {/* Background Animated Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-pink-200 rounded-full blur-[120px] opacity-60"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-amber-100 rounded-full blur-[120px] opacity-60"></div>
         <div className="absolute top-1/4 right-1/4 w-[30%] h-[30%] bg-blue-100 rounded-full blur-[100px] opacity-40"></div>
@@ -97,7 +97,7 @@ export default function App() {
         ))}
       </AnimatePresence>
 
-      <div className="z-10 text-center px-4 max-w-lg w-full">
+      <div className="z-10 w-full max-w-lg px-4 m-auto py-8 lg:py-12 flex flex-col">
         <AnimatePresence mode="wait">
           {!isOpen ? (
             <motion.div
@@ -137,20 +137,20 @@ export default function App() {
               initial={{ scale: 0.8, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.2 }}
-              className="bg-white/40 backdrop-blur-xl p-8 sm:p-12 rounded-[40px] shadow-2xl border border-white/40 relative overflow-hidden"
+              className="bg-white/40 backdrop-blur-xl p-6 sm:p-12 rounded-3xl sm:rounded-[40px] shadow-2xl border border-white/40 relative overflow-hidden"
             >
               {/* Card decorative elements */}
               <div className="absolute -inset-24 bg-pink-200/40 blur-3xl rounded-full z-0 opacity-50" />
               
               <div className="relative z-10 flex flex-col items-center">
-                <div className="inline-block px-4 py-1 bg-white/60 rounded-full text-sm font-semibold tracking-widest uppercase text-amber-700 mb-6 border border-amber-200/50">
+                <div className="inline-block px-3 sm:px-4 py-1 bg-white/60 rounded-full text-xs sm:text-sm font-semibold tracking-widest uppercase text-amber-700 mb-4 sm:mb-6 border border-amber-200/50">
                   Специальная доставка
                 </div>
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
-                  className="text-4xl sm:text-6xl font-bold bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent mb-4 text-center leading-tight tracking-tight"
+                  className="text-3xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent mb-4 text-center leading-tight tracking-tight"
                 >
                   С Днём Рождения,<br/>Анастасия!
                 </motion.h1>
@@ -166,11 +166,11 @@ export default function App() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2, duration: 1 }}
-                  className="text-lg sm:text-2xl font-light italic leading-relaxed text-slate-600 text-center mb-8"
+                  className="text-base sm:text-xl font-light italic leading-relaxed text-slate-600 text-center mb-6 sm:mb-8"
                 >
                   Пусть дебет всегда сходится с кредитом, а в жизни царит идеальный баланс счастья, здоровья и любви! 
                   <br/><br/>
-                  <span className="font-medium text-slate-800 block mt-2 text-xl not-italic">
+                  <span className="font-medium text-slate-800 block mt-2 text-lg sm:text-xl not-italic">
                     Живи ярко, считай легко,<br/> люби много! ✨
                   </span>
                 </motion.p>
@@ -186,7 +186,7 @@ export default function App() {
                       origin: { y: 0.6 },
                       colors: ['#ec4899', '#8b5cf6', '#3b82f6', '#fcd34d']
                     })}
-                    className="w-full max-w-[280px] h-20 sm:h-24 bg-gradient-to-r from-amber-400/20 to-yellow-400/20 rounded-3xl border border-amber-200/50 flex flex-col items-center justify-center relative overflow-hidden transition-all transform hover:scale-105 active:scale-95 shadow-lg group"
+                    className="w-full max-w-[280px] h-16 sm:h-20 bg-gradient-to-r from-amber-400/20 to-yellow-400/20 rounded-2xl sm:rounded-3xl border border-amber-200/50 flex flex-col items-center justify-center relative overflow-hidden transition-all transform hover:scale-105 active:scale-95 shadow-lg group"
                   >
                     <div className="text-center z-10">
                       <p className="text-sm font-bold text-amber-800">ЕЩЁ САЛЮТ</p>
